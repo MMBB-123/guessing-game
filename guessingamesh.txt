@@ -1,0 +1,11 @@
+#!/bin/bash
+echo "welcome to the guessing game ! how many files are in the current directory ?"
+read guess
+correct=$(ls -l | grep "^-" | wc -l)
+if [[ $guess -eq $correct ]] ; then
+echo "congratulations you have guessed correctly"
+elif [[ $guess -gt $correct ]]; then
+echo"Sorry your guess is too high ! go lower"
+elif [[ $guess -lt $correct ]]; then 
+echo"Sorry your guess is too low ! go higher"
+fi
